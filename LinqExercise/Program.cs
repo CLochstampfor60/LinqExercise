@@ -17,7 +17,7 @@ namespace LinqExercise
              * You may find that Method syntax is easier to use since it is most like C#
              * Every one of these can be completed using Linq and then printing with a foreach loop.
              * Push to your github when completed!
-             * 
+             * werwerwerwerwer
              */
 
             //TODO: Print the Sum of numbers
