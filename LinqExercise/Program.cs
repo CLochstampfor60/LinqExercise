@@ -17,16 +17,26 @@ namespace LinqExercise
              * You may find that Method syntax is easier to use since it is most like C#
              * Every one of these can be completed using Linq and then printing with a foreach loop.
              * Push to your github when completed!
-             * werwerwerwerwer
              */
 
             //TODO: Print the Sum of numbers
+            var sumOfNumbers = numbers.Sum();
+            Console.WriteLine(sumOfNumbers);
 
             //TODO: Print the Average of numbers
+            var averageOfNumbers = numbers.Average();
+            Console.WriteLine(averageOfNumbers);
 
             //TODO: Order numbers in ascending order and print to the console
+            var ascendingOrderNumbers = numbers.OrderBy(numbers => numbers).ToList();
+            Console.WriteLine(ascendingOrderNumbers);
+
 
             //TODO: Order numbers in descending order and print to the console
+            /*            var descendingList = new List<int>();
+                        var descendingOrderNumbers = numbers.OrderByDescending(x => x).ToList(Add);
+                        Console.WriteLine(descendingOrderNumbers);*/
+
 
             //TODO: Print to the console only the numbers greater than 6
 
