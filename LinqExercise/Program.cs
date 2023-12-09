@@ -57,15 +57,14 @@ namespace LinqExercise
             Console.WriteLine("***********\n");
 
             //TODO: Change the value at index 4 to your age, then print the numbers in descending order
-          /*  numbers[4] = 41;*/
-            
-            numbers.SetValue(41, 4);
+
+            numbers[Array.IndexOf(numbers, 4)] = 41;
+
             var newDescending = numbers.OrderByDescending(num => num);
             foreach (var number in newDescending)
             {
                 Console.WriteLine(number);
             }
-
 
             Console.WriteLine("***********\n");
             // List of employees ****Do not remove this****
@@ -73,13 +72,26 @@ namespace LinqExercise
 
             //TODO: Print all the employees' FullName properties to the console only if their FirstName starts with a C OR an S and order this in ascending order by FirstName.
 
+            var newEmployeeList = employees.FindAll(employee => employee.FirstName.ToLower()[0] == 'c' || employee.FirstName.ToLower()[0] == 's').OrderBy(employee => employee.FirstName);
+
+          foreach (var employee in newEmployeeList) { Console.WriteLine(employee.FirstName); }
+
 
             Console.WriteLine("***********\n");
             //TODO: Print all the employees' FullName and Age who are over the age 26 to the console and order this by Age first and then by FirstName in the same result.
 
+            var anotherEmployeeList = employees.Where(employee => employee.Age > 26).OrderBy(employee => employee.Age).ThenBy(employee => employee.FirstName);
+
+            foreach (var employee in anotherEmployeeList) { 
+/*                Console.WriteLine(employee.Age);
+            Console.WriteLine(employee.FullName);*/
+                Console.WriteLine($"Age: {employee.Age}, Name: {employee.FullName}");
+            }
 
             Console.WriteLine("***********\n");
             //TODO: Print the Sum of the employees' YearsOfExperience if their YOE is less than or equal to 10 AND Age is greater than 35.
+
+
 
 
             Console.WriteLine("***********\n");
