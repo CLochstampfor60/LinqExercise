@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
+using System.Xml;
 
 namespace LinqExercise
 {
@@ -22,20 +24,27 @@ namespace LinqExercise
             //TODO: Print the Sum of numbers
             var sumOfNumbers = numbers.Sum();
             Console.WriteLine(sumOfNumbers);
+            Console.WriteLine("***********\n");
 
             //TODO: Print the Average of numbers
             var averageOfNumbers = numbers.Average();
             Console.WriteLine(averageOfNumbers);
+            Console.WriteLine("***********\n");
 
             //TODO: Order numbers in ascending order and print to the console
-            var ascendingOrderNumbers = numbers.OrderBy(numbers => numbers).ToList();
-            Console.WriteLine(ascendingOrderNumbers);
+            var ascendingOrderNumbers = numbers.OrderBy(x => x).ToList();
+            foreach( var number in ascendingOrderNumbers)   
+                Console.WriteLine(number);
 
+            Console.WriteLine("***********\n");
 
             //TODO: Order numbers in descending order and print to the console
-            /*            var descendingList = new List<int>();
-                        var descendingOrderNumbers = numbers.OrderByDescending(x => x).ToList(Add);
-                        Console.WriteLine(descendingOrderNumbers);*/
+            var descendingOrderNumbers = numbers.OrderByDescending(x => x);
+            foreach (var number in descendingOrderNumbers)
+            {
+                Console.WriteLine(number);
+            }
+            Console.WriteLine("***********\n");
 
 
             //TODO: Print to the console only the numbers greater than 6
